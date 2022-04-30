@@ -31,12 +31,12 @@ class SaveBefore implements \Magento\Framework\Event\ObserverInterface
             'Magento\Ui\Model\Bookmark'
         ];
         $user = $this->_adminSession->getUser();
-        if ($user){
+        if ($user) {
             $roleData = $user->getRole()->getRoleName();
-            if ($roleData == 'Read Only') {
+            if ($roleData == \Ayaz\AdminReadOnly\Setup\Patch\Data\ReadOnlyRole::ROLENAME) {
                 $model = $observer->getEvent()->getObject();
                 $name = get_class($model);
-                if (!in_array($name, $allowed)) {    
+                if (!in_array($name, $allowed)) {
                     $this->logger($name);
                     throw new \Exception("You are not allowed to make changes", 1);
                 }
