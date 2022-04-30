@@ -1,0 +1,24 @@
+{
+    "name": "ayaz/module-adminreadonly",
+    "description": "Module to Provide Read Only Access to particular Role",
+    "type": "magento2-module",
+    "license": "GPL-3.0",
+    "authors": [
+        {
+            "name": "ayaz"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": "~7.1.3||~7.4.0"
+    },
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Ayaz\\AdminReadOnly\\": ""
+        }
+    },
+    "version": "1.0.0"
+}
